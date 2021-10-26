@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%); /* --black (variavel) */
+  --grey: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased; /* Fonte fica mais suave */
+}
+
+body {
+  display: grid; /* place funciona com grid */
+  place-items: center;
+}
+
+main {
+  background: url(images/Mobile.jpg);
+  width: 375px;
+  height: 812px;
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--grey); /* Usando a variavel */
+}
+
+.avatar {
+  width: 10rem; /* 1rem é equivalente a 16px */
+  margin: 11.5rem auto 0;
+  position: relative; /* limite do absolute */
+}
+
+.avatar span {
+  position: absolute; /* permite empilhamento */
+  top: -15px;
+  z-index: 1; /* posicionamento (z - profundidade) */
+}
+
+.avatar > img {
+  /* procurar a imagem que está em primeiro nivel */
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover; /* adaptar a imagem */
+  clip-path: polygon(
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%
+  ); /* clip css */
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+  list-style: none; /* remove os pontos */
+  padding: 0; /* alinha no centro y */
+  display: flex; /* "box" ao lado da outra / gap e justify só com gap*/
+  gap: 0.5rem; /* espaço entre as "box" */
+  justify-content: center; /* alinha no centro x */
+}
